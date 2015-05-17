@@ -25,13 +25,13 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        table = new Table(new Point(0,0), new Point(4,4));
-        robot = new Robot(new Point(0,0), 0.0, null);
-        reportText = (EditText) findViewById(R.id.reportEditText);
+        //table = new Table(new Point(0,0), new Point(4,4));
+        //robot = new Robot(new Point(0,0), 0.0, null);
+        //reportText = (EditText) findViewById(R.id.reportEditText);
 
-        Spinner directionList = (Spinner) findViewById(R.id.directionsSpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, directions);
-        directionList.setAdapter(adapter);
+        //Spinner directionList = (Spinner) findViewById(R.id.directionsSpinner);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, directions);
+        //directionList.setAdapter(adapter);
     }
 
     @Override
@@ -57,30 +57,30 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onPlace(View view) {
-        String x = ((EditText) findViewById(R.id.xEditText)).getText().toString();
-        String y = ((EditText) findViewById(R.id.yEditText)).getText().toString();
-        String direction = ((Spinner) findViewById(R.id.directionsSpinner)).getSelectedItem().toString();
-        double facing = directions.indexOf(direction)/2.0;
-        robot.place(new Point(Float.parseFloat(x), Float.parseFloat(y)), facing, table);
-        reportText.setText("Place");
+        //String x = ((EditText) findViewById(R.id.xEditText)).getText().toString();
+        //String y = ((EditText) findViewById(R.id.yEditText)).getText().toString();
+        //String direction = ((Spinner) findViewById(R.id.directionsSpinner)).getSelectedItem().toString();
+        //double facing = directions.indexOf(direction)/2.0;
+        //robot.place(new Point(Float.parseFloat(x), Float.parseFloat(y)), facing, table);
+        //reportText.setText("Place");
     }
 
     public void onMove(View view) {
-        robot.move();
-        reportText.setText("Move");
+        //robot.move();
+        //reportText.setText("Move");
     }
 
     public void onLeft(View view) {
-        robot.left();
-        reportText.setText("Left");
+        //robot.left();
+        //reportText.setText("Left");
     }
 
     public void onRight(View view) {
-        robot.right();
-        reportText.setText("Right");
+        //robot.right();
+        //reportText.setText("Right");
     }
 
     public void onReport(View view) {
-        reportText.setText(robot.report(directions));
+        //reportText.setText(robot.report(directions));
     }
 }

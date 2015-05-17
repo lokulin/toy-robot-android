@@ -1,146 +1,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
     android:id="@+id/robotLayout"
-    android:nestedScrollingEnabled="false">
+    android:nestedScrollingEnabled="false"
+    >
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/reportEditText"
-        android:editable="false"
-        android:layout_above="@+id/xEditText"
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/reportButton"
-        android:layout_toStartOf="@+id/reportButton" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="X:"
-        android:id="@+id/xText"
-        android:layout_alignBaseline="@+id/xEditText"
-        android:layout_alignBottom="@+id/xEditText"
-        android:layout_alignRight="@+id/direcitonText"
-        android:layout_alignEnd="@+id/direcitonText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Y:"
-        android:id="@+id/yText"
-        android:layout_alignBaseline="@+id/yEditText"
-        android:layout_alignBottom="@+id/yEditText"
-        android:layout_alignLeft="@+id/xText"
-        android:layout_alignStart="@+id/xText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Direction:"
-        android:id="@+id/direcitonText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/yEditText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/yEditText"
-        android:layout_below="@+id/xEditText"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/direcitonText"
-        android:layout_toEndOf="@+id/direcitonText"
-        android:inputType="number" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/xEditText"
-        android:inputType="number"
-        android:layout_below="@+id/reportButton"
-        android:layout_toRightOf="@+id/xText"
-        android:layout_alignRight="@+id/yEditText"
-        android:layout_alignEnd="@+id/yEditText" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Place"
-        android:id="@+id/placeButton"
-        android:onClick="onPlace"
-        android:layout_below="@+id/yEditText"
-        android:layout_toRightOf="@+id/reportEditText"
-        android:layout_toEndOf="@+id/reportEditText" />
+        android:src="@drawable/background"
+        android:scaleType="centerCrop" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/relativeLayout"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/placeButton">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
 
-        <Button
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Move"
-            android:id="@+id/moveButton"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:nestedScrollingEnabled="false"
-            android:onClick="onMove" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Left"
-            android:id="@+id/leftButton"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Hello Robot!"
+            android:id="@+id/textView"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:onClick="onLeft" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Right"
-            android:id="@+id/rightButton"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:onClick="onRight" />
-
+            android:textStyle="bold" />
     </RelativeLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Report"
-        android:id="@+id/reportButton"
-        android:onClick="onReport"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/directionsSpinner"
-        android:layout_below="@+id/yEditText"
-        android:layout_alignLeft="@+id/yEditText"
-        android:layout_alignStart="@+id/yEditText"
-        android:layout_alignRight="@+id/reportEditText"
-        android:layout_alignEnd="@+id/reportEditText"
-        android:layout_alignBottom="@+id/placeButton"
-        android:spinnerMode="dropdown" />
 
 </RelativeLayout>
